@@ -1303,7 +1303,11 @@ color: white;
 	color: white !important;
 }
 
-/* css for styling of the right side present in the index php file */
+/* css for styling of the left side present in the index php file */
+
+#primary{
+	margin-top: 40px;
+}
 
 .blog-page-title{
 	margin-bottom: 11px;
@@ -1365,70 +1369,135 @@ color: white;
 	grid-template-columns: 35% 65%;
 	margin-top: 21px;
   }
-  .blog-element{
-	margin-bottom: 50px;
-  }
-  .blog-element a:active{
-	text-decoration: none !important;
-  }
-  .post-content >a :visited{
-	color:#d90c3a !important;
-	font-size: 16px;
-	text-decoration: none;
-  }
-  .single-post-title h2{
-	font-size: 35px;
-	font-weight: 500;
+.blog-element{
+margin-bottom: 50px;
+}
+.blog-element a:active{
+text-decoration: none !important;
+}
+.post-content >a :visited{
+color:#d90c3a !important;
+font-size: 16px;
+text-decoration: none;
+}
+.single-post-title h2{
+font-size: 35px;
+font-weight: 500;
+color: #62585F;
+text-shadow: 2px 2px 2px #ffffff;
+margin: 0px;
+}
+.blog-item img{
+width: 95%;
+height: 90%;
+border-radius: 15px;
+}
+.single-post-info{
+display: flex;
+gap:10px;
+border-bottom: 1px solid #222222;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+.single-post-info p{
+margin: 15px 0;
+}
+.single-post-shrtdes{
+margin-bottom: 20px;
+}
+.single-post-tags{
+margin-bottom: 20px;
+}
+.single-post-thumbnail img{
+width: 100%;
+margin-bottom: 20px;
+}
+.author-name{
+color: red;
+}
+.comment-count{
+color: red;
+}
+.single-post-main-content{
+margin-bottom: 20px;
+}
+.single-post-comment-title p{
+margin: 10px;
+font-weight: 700;
+}
+.single-post-comment-title{
+border-top: 1px solid #222222;
+border-bottom: 1px solid #222222;
+font-size: 18px;
+}
+.comment-reply-title{
+border-top: 1px solid #222222;
+border-bottom: 1px solid #222222;
+font-size: 18px;
+padding: 10px;
+}
+
+/* css for the right side of the index.php page */
+.right-side{
+	padding: 0px 18px;
+}
+
+
+/* css for the sidebar */
+
+.wp-block-gallery.has-nested-images figure.wp-block-image img{
+	border-radius: 5px;
+}
+
+.wp-block-group__inner-container h2{
+	border-bottom: 1px solid #222222;
 	color: #62585F;
-	text-shadow: 2px 2px 2px #ffffff;
-	margin: 0px;
-  }
-  .blog-item img{
-	width: 95%;
-    height: 90%;
-    border-radius: 15px;
-  }
-  .single-post-info{
-	display: flex;
-	gap:10px;
-	border-bottom: 1px solid #222222;
-	justify-content: space-between;
-	margin-bottom: 20px;
-  }
-  .single-post-info p{
-	margin: 15px 0;
-  }
-  .single-post-shrtdes{
-	margin-bottom: 20px;
-  }
-  .single-post-tags{
-	margin-bottom: 20px;
-  }
-  .single-post-thumbnail img{
-	width: 100%;
-	margin-bottom: 20px;
-  }
-  .author-name{
+	font-weight: 500;
+	margin-top: 10px;
+}
+
+.wp-block-group__inner-container ul{
+	margin: 0;
+	padding-inline-start: 20px;
+}
+
+.wp-block-latest-posts__post-title{
+	display: block;
+	color: #62585F;
+	text-decoration: none;
+}
+
+.wp-block-latest-posts__post-title:hover{
 	color: red;
-  }
-  .comment-count{
+}
+
+.wp-block-latest-posts__featured-image img{
+	border-radius: 10px;
+}
+
+.wp-block-latest-posts__post-author, .wp-block-latest-posts__post-date{
+	display: inline-block;
+	content: 'abc';
+}
+
+.wp-block-latest-posts__post-author::after{
+	content: " on "; 
+}
+
+.wp-block-latest-posts__post-author{
+	margin-right: 5px;
+}
+
+.comment-list{
+	margin: 0;
+	padding: 0;
+}
+
+.wp-block-archives-list li a{
+	text-decoration: none;
+	color: #62585F;
+}
+
+.wp-block-archives-list li a:hover{
 	color: red;
-  }
-  .single-post-main-content{
-	margin-bottom: 20px;
-  }
-  .single-post-comment-title p{
-	margin: 10px;
-	font-weight: 700;
-  }
-  .single-post-comment-title{
-	border-top: 1px solid #222222;
-	border-bottom: 1px solid #222222;
-	font-size: 18px;
-  }
-  .comment-reply-title{
-	border-top: 1px solid #222222;
-	border-bottom: 1px solid #222222;
-	font-size: 18px;
-	padding: 10px;
-  }
+}
