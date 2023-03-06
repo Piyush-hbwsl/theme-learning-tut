@@ -1,0 +1,87 @@
+/* file whidh consists of single page css code */
+/* this file will decide how we will see the post  */
+/* a particular post on front end */
+
+
+#primary{
+    /* border: 2px solid gold; */
+    padding: 0px var(--padding-length);
+    min-height: 400px;
+    display: flex;
+}
+
+.left-side{
+    /* border: 1px solid green; */
+    width: 72%;
+}
+.right-side{
+    border: 1px solid red;
+    width: 28%;
+}
+
+.left-side__title{
+    /* border: 1px solid red; */
+	font-family: 'Open Sans', sans-serif;
+    font-size: 35px;
+    color: #62585f;
+    text-shadow: 2px 0px 0px #ffffff;
+    margin-bottom: 12px;
+}
+
+.left-side__details{
+    border-bottom: 1px solid green;
+    display: flex;
+    position: relative;
+    margin-bottom: 9px;
+}
+.left-side__details p span{
+    color: red;
+}
+.left-side__p{
+    position: absolute;
+    right: 0;
+}
+
+.left-side__excerpt{
+    /* border: 1px solid green; */
+    margin-bottom: 9px;
+}
+
+.left-side__thumbnail{
+    width: 100%;
+    /* border: 1px solid green; */
+    height: 500px;
+    margin-bottom: 9px;
+}
+
+.left-side__thumbnail img{
+    width: 80%;
+    height: 100%;
+}
+
+.left-side__content{
+    /* border: 1px solid green; */
+    margin-bottom: 23px;
+}
+
+.left-side__content p{
+    margin-bottom: 5px;
+}
+
+.left-side__commhead{
+    /* border: 1px solid red; */
+	font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: #62585f;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin-bottom: 9px;
+    margin-top: 9px;
+    line-height: 36px;
+    /* text-shadow: 2px 0px 0px #ffffff; */
+    /* margin-bottom: 12px; */
+}
+
+.left-side__tags{
+    color: red;
+}

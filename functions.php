@@ -142,12 +142,14 @@ function _displayfly_scripts() {
 	wp_style_add_data( '_displayfly-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( '_displayfly-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
+	
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', '_displayfly_scripts' );
+
 
 /**
  * Implement the Custom Header feature.
@@ -222,7 +224,7 @@ class designfly_Portfolio{
 
 		register_post_type( 'Portfolio', $args,5);
 	}
-
+	
 	// register a custom taxonomy portfolio category
 	public function create_portfoliocategory_tax() {
 
@@ -285,11 +287,73 @@ class designfly_Portfolio{
 			'show_in_quick_edit' => true,
 			'show_admin_column' => true,
 			'show_in_rest' => true,
+			'supports' => array('title', 'editor', 'thumbnail', 'comments','author','excerpt'),
 		);
-		register_taxonomy( 'portfoliotag', array('portfolio'), $args );
+		register_taxonomy( 'portfolio_tag', array('portfolio'), $args );
 	
 	}
 }
 
 $createcpt = new designfly_Portfolio();
+// add_post_type_support('Portfolio', 'excerpt');
 
+// enqueue the script when we go to particular files
+function my_enqueue_stuff() {
+	if (basename(get_page_template( )) == 'template-home.php' ) {
+		wp_enqueue_script( 'mystyles', get_template_directory_uri() . '/js/mystyles.js' );
+		wp_enqueue_style( 'templatehstyles',get_template_directory_uri() . '/css/templatehome.css',['_displayfly-style']);
+		wp_enqueue_script( 'mystylesjpq', get_template_directory_uri() . '/lightbox-plus-jquery.js' );
+		wp_enqueue_script( 'mystylesjq', get_template_directory_uri() . '/lightbox.js',['jquery']);
+		wp_enqueue_style( 'mystylesjq',get_template_directory_uri() . '/lightbox.css',['_displayfly-style']);
+
+	}
+	if(basename(get_page_template()) == 'page.php'){
+		wp_enqueue_style( 'singlepstyles',get_template_directory_uri() . '/css/singlepage.css',['_displayfly-style']);
+	}
+	if(basename(get_page_template()) == 'template-blog.php'){
+		wp_enqueue_style( 'blogstyles',get_template_directory_uri() . '/css/blogpage.css',['_displayfly-style']);
+
+	}
+}
+
+add_action( 'wp_enqueue_scripts', 'my_enqueue_stuff' );
+// adding differ to our scripts so that it loads after the document has entirely loaded
+function mind_defer_scripts( $tag, $handle, $src ) {
+	$defer = array( 
+		'mystyles',
+		'mystylesjpq',
+		'mystylesjq'
+	);
+	if ( in_array( $handle, $defer ) ) {
+		return '<script src="' . $src . '" defer="defer" type="text/javascript"></script>' . "\n";
+	}
+		
+		return $tag;
+	} 
+add_filter( 'script_loader_tag', 'mind_defer_scripts', 10, 3 );
+
+function designfly_pagination(){
+	previous_post_link();
+	next_post_link();
+}
+
+
+function aquila_pagination() {
+
+	$allowed_tags = [
+		'p' => [
+			'class' => []
+		],
+		'a' => [
+			'class' => [],
+			'href' => [],
+		]
+	];
+
+	$args = [
+		'before_page_number' => '<p class="pagination-btn">',
+		'after_page_number' => '</p>',
+	];
+
+	printf( '<nav class="aquila-pagination clearfix">%s</nav>', wp_kses( paginate_links( $args ), $allowed_tags ) );
+}

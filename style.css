@@ -70,6 +70,7 @@ html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 }
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap');
 
 /* Sections
 	 ========================================================================== */
@@ -79,6 +80,7 @@ html {
  */
 body {
 	margin: 0;
+	margin-bottom: 0px !important;
 }
 
 /**
@@ -384,6 +386,7 @@ template {
 *::before,
 *::after {
 	box-sizing: inherit;
+	padding: 0;
 }
 
 html {
@@ -418,7 +421,7 @@ h6 {
 }
 
 p {
-	margin-bottom: 1.5em;
+	margin-bottom: 0px;
 }
 
 dfn,
@@ -968,17 +971,22 @@ textarea {
 	margin-bottom: 1.5em;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+/* custom css starts from here */
+/* this css is for custom template-parts info section */
 
-/* custom css for section info template which holds boxes adver, mult,phot */
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	--padding-length:230px;
+}
 
 .info-sec{
-	padding: 0px 200px;
+	padding: 25px var(--padding-length);
 	background-color: #e9e9e9;
 	display: grid;
 	grid-template-columns: repeat(3,calc(100%/3));
 	justify-content: center;
-	height: 101px;
 	grid-gap:8px;
 }
 
@@ -1014,3 +1022,413 @@ textarea {
 	color: #333333;
 	line-height: 19.5px;
 }
+
+/* css which will be added to design the header-part.php */
+
+#masthead{
+	border: 1px solid blue;
+	display: flex;
+	padding: 20px var(--padding-length);
+	align-items: center;
+}
+.site-branding{
+	/* border: 1px solid red; */
+	width: 200px;
+}
+
+#site-navigation{
+	margin-left: 250px;
+	display: flex;
+}
+
+.nav{
+	align-items: center;
+}
+.nav li{
+	margin-right: 20px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 17px;
+	padding: 10px;
+	border-radius: 5px;
+}
+.nav li a{
+	color: #222222;
+}
+
+.nav li:hover {
+	background-color: #ef4634;
+	padding: 10px;
+	border-radius: 3px;
+}
+
+.nav li:hover a{
+	color: white !important;
+}
+
+.current-menu-item{
+	margin-right: 20px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 21px;
+	padding: 10px;
+	border-radius: 3px;
+	background-color: red;
+}
+
+.current-menu-item a{
+	color: white !important;	
+}
+
+/* search bar in navigation menu */
+
+.search-container{
+	margin: auto;
+}
+
+.search__btn{
+    margin-left: 10px;
+}
+
+.site-header .search-container button{
+    padding: 10px 10.72px;
+	margin-left: 10px;
+    background: #333333;
+    border: none;
+    cursor: pointer;
+	border-radius: 20px;
+}
+
+.site-header .search-container button:hover{
+    background: #ff0022;
+}
+
+.search-bar {
+	display: flex;
+}
+
+.submit__button button i{
+	color: white;
+}
+
+#fa-ser{
+	padding: 0px 2px;
+	font-size: 15px;
+	width: 20px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+	color: white;
+	border-radius: 50%;
+}
+#fa-ser:hover {
+	opacity: 1;
+	text-decoration: none;
+	background-color: yellow;
+}
+
+/* footer css  */
+#colophon{
+	padding: 0px var(--padding-length);
+}
+
+
+/* css for the footer part present in template part which is static */
+
+
+.grid-container {
+	margin: auto;
+	margin-top: 50px;
+	display: grid;
+	grid-template-columns: 50% 50%; 
+	padding: 50px 0px; 
+	border-bottom: 1px solid #222222;
+	border-top: 1px solid #222222;
+	width: fit-content;
+}
+
+.grid-container h2{
+	font-size: 25px;
+	font-weight: 500;
+	color: #62585f;
+}
+
+.footer-section-one h2{
+	margin-bottom: 11px;
+}
+
+
+.grid-container-description{
+	margin-bottom: 15px;
+	color: #62585f;
+}
+  
+.grid-container > div {
+	text-align: left;
+	padding: 20px 0;
+}
+
+.footer-section-one{
+	padding-right: 20px !important;
+}
+
+.footer-section-two{
+	padding-left: 20px !important;
+}
+
+.footer-section-two p{
+	margin-bottom: 3px;
+}
+
+.footer-read-more{
+	text-decoration: none;
+}
+
+.footer-read-more:hover{
+	text-decoration: underline;
+}
+
+
+.email-color{
+	color: red;
+}
+
+.inline-para{
+	display: inline-block;
+}
+
+.site-info{
+	text-align: center;
+	padding: 20px 0px;
+}
+
+.footer-link{
+	text-decoration: none;
+}
+
+.footer-link:hover{
+	text-decoration: underline;
+}
+
+.social-icons{
+	padding-top: 10px;
+}
+
+.fa {
+	padding: 15px;
+    font-size: 25px;
+    width: 60px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    color: #ffffff;
+	border-radius: 5px;
+  }
+  
+.fa:hover {
+	opacity: 0.7;
+	text-decoration: none;
+}
+
+.fa-facebook {
+background: #3B5998;
+color: white;
+}
+
+.fa-twitter {
+background: #55ACEE;
+color: white;
+}
+
+.fa-google {
+background: #dd4b39;
+color: white;
+}
+
+.fa-linkedin {
+background: #007bb5;
+color: white;
+}
+
+.fa-pinterest {
+background: #cb2027;
+color: white;
+}
+
+.hover__image{
+	width: -webkit-fill-available;
+	border-radius: 10px;
+}
+
+/* css to change the comment form  */
+
+/* #commentform{
+	background-color: red;
+} */
+
+/* styling the pagination button */
+
+.aquila-pagination{
+	display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.pagination-btn{
+	padding: 5px 10px;
+    margin-right: 5px;
+	cursor: pointer;
+	background-color: red;
+	color: white;
+}
+.pagination-btn:hover{
+	background-color: black;
+}
+
+.next,.prev{
+	background: black;
+    text-decoration: none;
+    padding: 5px 5px;
+    color: white;
+}
+.prev{
+	margin-right: 5px;
+}
+.current{
+	cursor: pointer;
+}
+.prev:visited{
+	color: white !important;
+}
+.next:visited{
+	color: white !important;
+}
+
+/* css for styling of the right side present in the index php file */
+
+.blog-page-title{
+	margin-bottom: 11px;
+}
+
+.blog-element a{
+	text-decoration: none !important;
+}
+.blog-page-title p{
+	font-size: 45px;
+	font-weight: 400;
+	border-bottom: 1px solid #222222;
+}
+
+.blog-item img{
+	width: 100%;
+	border-radius: 10px;
+}
+
+.blog-content-des{
+	padding-left: 30px;
+}
+
+.blog-title{
+	color: #ffffff;
+	background-color: #333333;
+	padding: 15px 20px;
+	font-weight: 500;
+	border-radius: 5px;
+}
+
+.blog-title:hover{
+	background-color: red;
+}
+
+.blog-title:active{
+	background-color: red;
+}
+
+.blog-content-des .post-content-ind{
+	text-transform: uppercase;
+	text-decoration: none;
+	margin-top: 20px;
+	color: red;
+    cursor: pointer;
+}
+
+.blog-content-des .post-content:hover{
+	text-decoration: underline;
+}
+
+.blog-content-des p{
+	margin: revert;
+	margin-top: 0;
+}
+
+.blog-content{
+	display: grid;
+	grid-template-columns: 35% 65%;
+	margin-top: 21px;
+  }
+  .blog-element{
+	margin-bottom: 50px;
+  }
+  .blog-element a:active{
+	text-decoration: none !important;
+  }
+  .post-content >a :visited{
+	color:#d90c3a !important;
+	font-size: 16px;
+	text-decoration: none;
+  }
+  .single-post-title h2{
+	font-size: 35px;
+	font-weight: 500;
+	color: #62585F;
+	text-shadow: 2px 2px 2px #ffffff;
+	margin: 0px;
+  }
+  .blog-item img{
+	width: 95%;
+    height: 90%;
+    border-radius: 15px;
+  }
+  .single-post-info{
+	display: flex;
+	gap:10px;
+	border-bottom: 1px solid #222222;
+	justify-content: space-between;
+	margin-bottom: 20px;
+  }
+  .single-post-info p{
+	margin: 15px 0;
+  }
+  .single-post-shrtdes{
+	margin-bottom: 20px;
+  }
+  .single-post-tags{
+	margin-bottom: 20px;
+  }
+  .single-post-thumbnail img{
+	width: 100%;
+	margin-bottom: 20px;
+  }
+  .author-name{
+	color: red;
+  }
+  .comment-count{
+	color: red;
+  }
+  .single-post-main-content{
+	margin-bottom: 20px;
+  }
+  .single-post-comment-title p{
+	margin: 10px;
+	font-weight: 700;
+  }
+  .single-post-comment-title{
+	border-top: 1px solid #222222;
+	border-bottom: 1px solid #222222;
+	font-size: 18px;
+  }
+  .comment-reply-title{
+	border-top: 1px solid #222222;
+	border-bottom: 1px solid #222222;
+	font-size: 18px;
+	padding: 10px;
+  }

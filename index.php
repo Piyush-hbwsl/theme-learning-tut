@@ -13,44 +13,46 @@
  */
 
 get_header();
+get_template_part('template-parts/section-info');
+// echo get_page_template();
 ?>
 
-	<main id="primary" class="site-main">
-
+<main id="primary" class="site-main">
+		<div class="left-side">
+		<div class="blog-page-title">
+				<p>LET'S BLOG</p>
+			</div>
 		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
 			/* Start the Loop */
-			while ( have_posts() ) :
+			while (have_posts()) :
 				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
+			?>
+				<div class="blog-element">
+					<a href="<?php the_permalink(); ?>"><h2 class="blog-title"><?php the_title(); ?></h2></a>
+					<div class="blog-content">
+						<div class="blog-item">
+							<?php the_post_thumbnail(array(220, 153)); ?>
+						</div>
+						<div class="blog-content-des">
+							<div class="single-post-info">
+								<p>by <span class="author-name"><?php the_author(); ?></span> on <?php echo get_the_date(); ?></p>
+								<p><span class="comment-count"><?php comments_number('No comment', '1 comment', '% comments'); ?></span></p>
+							</div>
+							<p class="post-short-des"><?php the_excerpt(); ?></p>
+							<a class="post-content-ind" href="<?php the_permalink(); ?>" target="_blank">Read More</a>
+						</div>
+					</div>
+				</div>
+			<?php
 			endwhile;
+			?>
+			<?php aquila_pagination(); ?>
+		</div> <!-- left -side -->
 
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
+        <div class="right-side">
+             <?php get_sidebar();?>
+        </div>
+</main><!-- #main -->
 
 <?php
 get_sidebar();

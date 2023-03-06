@@ -4,3 +4,4 @@ readme.txt
 screenshot.png
 composer.json
 /phpcs.xml.dist
+node_modules

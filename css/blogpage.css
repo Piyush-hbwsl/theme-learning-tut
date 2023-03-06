@@ -1,0 +1,28 @@
+/* this file contains all the css for blog page template */
+
+#primary{
+    border: 2px solid gold;
+    padding: 0px var(--padding-length);
+    min-height: 400px;
+    display: flex;
+    margin-top: 17px;
+}
+
+.left-side{
+    border: 1px solid green;
+    width: 72%;
+}
+.right-side{
+    border: 1px solid red;
+    width: 28%;
+}
+
+.left-side__title{
+    border: 1px solid green;
+	font-family: 'Open Sans', sans-serif;
+    font-size: 45px;
+    font-weight: 300px;
+    color: #62585f;
+    text-shadow: 2px 0px 0px #ffffff;
+    border-bottom: 1px solid black;
+}
